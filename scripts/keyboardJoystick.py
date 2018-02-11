@@ -25,6 +25,9 @@ class RoboController(object):
         self.turn_right = 3
         self.turn_left = 4
         self.keyboard = keyboard
+        self.camera_up = 5
+        self.camera_down = 6
+        self.camera_center = 7
 
     def on_press(self, key):
 
@@ -40,6 +43,12 @@ class RoboController(object):
 
             if key == self.keyboard.Key.right:
                 self.keyboard_command_pub.publish(int(6))
+            if key == self.keyboard.Key.alt:
+                self.keyboard_command_pub.publish(int(8))
+            if key == self.keyboard.Key.ctrl:
+                self.keyboard_command_pub.publish(int(9))
+            if key == self.keyboard.Key.space:
+                self.keyboard_command_pub.publish(int(5))
         except AttributeError:
             pass
 
