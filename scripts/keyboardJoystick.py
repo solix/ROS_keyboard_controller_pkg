@@ -43,12 +43,19 @@ class RoboController(object):
 
             if key == self.keyboard.Key.right:
                 self.keyboard_command_pub.publish(int(6))
-            if key == self.keyboard.Key.alt:
+            if key.char == 'o':
                 self.keyboard_command_pub.publish(int(8))
-            if key == self.keyboard.Key.ctrl:
+            if key.char == 'l':
                 self.keyboard_command_pub.publish(int(9))
-            if key == self.keyboard.Key.space:
-                self.keyboard_command_pub.publish(int(5))
+            if key.char == 'p':
+                self.keyboard_command_pub.publish(int(10))
+            if key.char == 'a':
+                self.keyboard_command_pub.publish(int(11))
+            if key.char == 's':
+                self.keyboard_command_pub.publish(int(12))
+            if key.char == 'd':
+                self.keyboard_command_pub.publish(int(13))
+
         except AttributeError:
             pass
 
