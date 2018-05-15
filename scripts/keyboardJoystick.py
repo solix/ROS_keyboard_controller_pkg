@@ -55,6 +55,8 @@ class RoboController(object):
                 self.keyboard_command_pub.publish(int(12))
             if key.char == 'd':
                 self.keyboard_command_pub.publish(int(13))
+            if key.char == 'z':
+                self.keyboard_command_pub.publish(int(14))
 
         except AttributeError:
             pass
